@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Qwen3.8 27B, IQ3_XXS, q8_0/q5_1 KV cache. Runs in a single RTX 3060 12GB, with ~21 tokens/s. For 63k context, need to run headless inside a tty.
+
 llama-server \
   -m "$LLM_Weights/ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF/Qwen3.8-27B-GSQ-RCO-IQ3_XXS.gguf" \
   --mmproj "$LLM_Weights/ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF/mmproj-Qwen3.8-27B-BF16.gguf" --no-mmproj-offload \
